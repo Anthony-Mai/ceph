@@ -6471,26 +6471,30 @@ int RGWSelectObj_ObjStore_S3::run_s3select(const char* query, const char* input,
     }
 
     if (output_row_delimiter.size()) {
-      csv.output_row_delimiter = *output_row_delimiter.c_str();
+      //csv.output_row_delimiter = *output_row_delimiter.c_str();
+      csv.row_delimiter = *output_row_delimiter.c_str();
     }
 
     if (output_column_delimiter.size()) {
-      csv.output_column_delimiter = *output_column_delimiter.c_str();
+      //csv.output_column_delimiter = *output_column_delimiter.c_str();
+      csv.column_delimiter = *output_column_delimiter.c_str();
     }
 
     if (output_quot.size()) {
-      csv.output_quot_char = *output_quot.c_str();
+      //csv.output_quot_char = *output_quot.c_str();
+      csv.quot_char = *output_quot.c_str();
     }
 
     if (output_escape_char.size()) {
-      csv.output_escape_char = *output_escape_char.c_str();
+      //csv.output_escape_char = *output_escape_char.c_str();
+      csv.escape_char = *output_escape_char.c_str();
     }
 
     if(output_quote_fields.compare("ALWAYS") == 0) {
-      csv.quote_fields_always = true;
+      //csv.quote_fields_always = true;
     }
     else if(output_quote_fields.compare("ASNEEDED") == 0) {
-      csv.quote_fields_asneeded = true;
+      //csv.quote_fields_asneeded = true;
     }
 
     if(m_header_info.compare("IGNORE")==0) {
